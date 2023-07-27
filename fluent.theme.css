@@ -1,7 +1,10 @@
 /* These are a bunch of changes I've made to an existing theme, to make it better, in my opinion. */
 /* Original fluent theme: https://github.com/TakosThings/Fluent-Discord */
 
+/* Importing the very cool fluent base */
 @import url(https://takosthings.github.io/Fluent-Discord/Fluent-Discord.css);
+
+/* Default settings */
 :root {
 	/* OrchidLight */
 	--fluent-accent-hue-sat: 307, 55%;
