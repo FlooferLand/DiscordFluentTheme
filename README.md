@@ -30,6 +30,8 @@ Also view all the settings [here](https://github.com/TakosThings/Fluent-Discord/
   I haven't made most of the theme, but I've made some custom elements to improve it
 - My theme is built on top of FluentDiscord using a CSS `@import`, when it receives any updates, so will this theme
 - This theme is mainly built for Vencord, i havent tested it on BD
+- Some things might be inconsistent, feel free to [open up an issue.](../../issues/new)
+  I currently daily-drive this theme however, so anything thats too annoying will definitely get patched
 
 # Plugin support
 Currently, I've made an effort to add support for the following Vencord plugins:
