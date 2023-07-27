@@ -7,9 +7,11 @@ If you want to replace my hella gay Owl House wallpaper _(dont know why you'd do
 @import url(https://raw.githubusercontent.com/FlooferLand/DiscordFluentTheme/main/fluent.theme.css);
 
 :root {
-	/* Pick another accent colour here - https://takosthings.github.io/Fluent-Discord/color.html */
+	/* OrchidLight */
 	--fluent-accent-hue-sat: 307, 55%;
 	--fluent-accent-lightness: 49%;
+
+	/* The colour text appears against the accent colour */
 	--fluent-text-on-accent-color: 0, 0, 0;
 
 	/* Ignore the gay */
@@ -17,7 +19,7 @@ If you want to replace my hella gay Owl House wallpaper _(dont know why you'd do
 	--fluent-acrylic-background-blur: 2px;
 	--fluent-acrylic-background-dimness: 60%;
 	--fluent-acrylic-background-saturate: 50%;
-	--fluent-guilds-icon-size: 44px;
+	--fluent-guilds-icon-size: 40px;
 }
 ```
 ### In Vencord, just paste that into your QuickCSS page. Could probably do the same for BD
