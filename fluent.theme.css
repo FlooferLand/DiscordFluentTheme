@@ -21,6 +21,11 @@
 	--fluent-guilds-icon-size: 40px;
 }
 
+/*
+	TODO: Should search more trough Discord's CSS and use more Discord variables for colours
+	Example: var(--background-mentioned-hover), var(--font-primary)
+*/
+
 /* Setting element */
 .themed-qqoYp3[role$="tab"] {
 	background-color: rgba(255, 255, 255, 0.03);
@@ -225,6 +230,15 @@ a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
 /* DM channel unread highlight */
 .interactive-26HRN_.interactive-iyXY_x .link-39sEB3[aria-label^="unread"] {
 	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* Ping message (replies & stuff) */
+li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv) {
+	background-color: var(--background-mentioned);
+}
+li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv):hover {
+	background-color: var(--background-mentioned-hover);
 }
 
 
