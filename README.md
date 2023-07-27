@@ -1,4 +1,4 @@
-# Fluent Theme But Slightly Better
+![# My Cute Gay Ass Theme](./marketing/marketing.png)
 Some changes I've made to [TakosThings' FluentDiscord theme.](https://github.com/TakosThings/Fluent-Discord)
 
 # Configuration (Vencord/BD)
