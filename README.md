@@ -24,7 +24,7 @@ If you want to replace my hella gay Owl House wallpaper _(dont know why you'd do
 Also view all the settings [here](https://github.com/TakosThings/Fluent-Discord/wiki/Options) alright goodbye thank you ヾ(＠⌒ー⌒＠)ノ
 
 # Keep in mind
-This is an edit of FluentDiscord, that theme belongs to [TakosThings.](https://github.com/TakosThings)
-I haven't made most of the theme, but I've made some custom elements to improve it.
-<br/>
-My theme is built on top of FluentDiscord, if it receives any updates, so will this theme.
+- This is an edit of FluentDiscord, that theme belongs to [TakosThings.](https://github.com/TakosThings)
+  I haven't made most of the theme, but I've made some custom elements to improve it
+- My theme is built on top of FluentDiscord, when it receives any updates, so will this theme
+- This theme is mainly build for Vencord, i havent tested it on BD
