@@ -1,0 +1,156 @@
+/* These are a bunch of changes I've made to an existing theme, to make it better, in my opinion. */
+/* Original fluent theme: https://github.com/TakosThings/Fluent-Discord */
+
+@import url(https://takosthings.github.io/Fluent-Discord/Fluent-Discord.css);
+:root {
+	/* OrchidLight */
+	--fluent-accent-hue-sat: 307, 55%;
+	--fluent-accent-lightness: 49%;
+
+	/* Other stuff */
+	--fluent-text-on-accent-color: 0, 0, 0;
+
+	/* Ignore the gay */
+	--fluent-acrylic-background: url(https://images2.alphacoders.com/129/1291151.png);
+	--fluent-acrylic-background-blur: 2px;
+	--fluent-acrylic-background-dimness: 60%;
+	--fluent-acrylic-background-saturate: 50%;
+	--fluent-guilds-icon-size: 44px;
+}
+
+/* Setting element */
+.themed-qqoYp3[role$="tab"] {
+	background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Settings title */
+.header-2F5_LB[role$="button"] {
+	margin-top: 10pt;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Textbox placeholder */
+.placeholder-1rCBhr {
+	color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Channel names */
+.name-28HaxV {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+.selected-2TbFuo div a div .name-28HaxV {
+	color: rgba(255, 255, 255, 1.0) !important;
+}
+
+/* Categories */
+/* Wish i could do better but i suck at CSS math */
+.name-3BUDLf {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 35%)
+	) !important;
+}
+.containerDefault-3TQ5YN {
+	opacity: 80%;
+}
+.containerDefault-3TQ5YN:hover {
+	opacity: 100%;
+}
+
+/* Server list */
+ul[data-list-id^="guildsnav"] {
+	backdrop-filter: blur(3px);
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Server icons */
+.wrapper-3kah-n[data-list-item-id^="guildsnav"] {
+	filter: saturate(105%);
+}
+.selected-1Drb7Z[data-list-item-id^="guildsnav"] {
+	filter: saturate(130%);
+}
+
+/* "Read all button" plugin support
+   (I've spent hours on this. THIS WAS A NIGHTMARE)
+
+   sizeMin-3Yqxk5 and button-ejjZWC are so annoying */
+div .scroller-3X7KbA[dir$="ltr"] button {
+	all: unset !important;
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) - 20%),
+		0.6
+	) !important;
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 40%)
+	) !important;
+	opacity: 1%;
+	font-weight: 600 !important;
+	font-size: 7.5pt !important;
+	padding: 2pt !important;
+	width: 90% !important;
+	user-select: all !important;
+	text-decoration: none;
+	cursor: pointer !important;
+	margin-left: 2pt !important;
+	margin-right: 2pt !important;
+}
+div .scroller-3X7KbA[dir$="ltr"] button:hover {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%),
+		0.6
+	) !important;
+}
+/* Text replace */
+div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX {
+    visibility: hidden;
+    position: relative;
+}
+div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX::after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Read All";
+}
+
+/* DMs header thing */
+.privateChannelsHeaderContainer-1UWASm {
+	background-color: rgba(0, 0, 0, 0.1);
+	margin-left: 5pt;
+	padding-top: 4pt !important;
+	padding-bottom: 5pt !important;
+	backdrop-filter: blur(4px);
+	margin-bottom: 2px;
+}
+
+/* DM channels */
+li.channel-1Shao0[role$="listitem"] {
+	border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
+	padding: 0px;
+}
+
+/* Blur under selected */
+.containerDefault-YUSmu3:hover, /* Hovered channel */
+.selected-2TbFuo                /* Selected channels */
+{
+	backdrop-filter: blur(4px);
+}
+
+/* Channel line remover */
+/* Tweak from the vending machine themself */
+@font-face {
+    font-family: "Dashless";
+    src: url("https://vendicated.github.io/random-files/Dashless.woff2") format("woff2");
+}
+[data-list-item-id^=channels___], /* channel list */
+[class^=titleWrapper] > h1, /* top bar with topic */
+[class^=resultChannel], /* channel name in search */
+[class^=channelMention], /* channel mentions in chat */
+[class^=placeholder][class*=slateTextArea] /* "Send a message in #blah" */
+{
+    font-family: "Dashless", var(--font-primary);
+}
