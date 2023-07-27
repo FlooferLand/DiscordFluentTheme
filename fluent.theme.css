@@ -10,7 +10,7 @@
 	--fluent-accent-hue-sat: 307, 55%;
 	--fluent-accent-lightness: 49%;
 
-	/* Other stuff */
+	/* The colour text appears against the accent colour */
 	--fluent-text-on-accent-color: 0, 0, 0;
 
 	/* Ignore the gay */
@@ -18,7 +18,7 @@
 	--fluent-acrylic-background-blur: 2px;
 	--fluent-acrylic-background-dimness: 60%;
 	--fluent-acrylic-background-saturate: 50%;
-	--fluent-guilds-icon-size: 44px;
+	--fluent-guilds-icon-size: 40px;
 }
 
 /* Setting element */
@@ -32,18 +32,65 @@
 	background-color: rgba(0, 0, 0, 0.15);
 }
 
-/* Textbox placeholder */
+
+/* Textbox placeholder text */
 .placeholder-1rCBhr {
 	color: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Channel names */
+/* Textbox "{user} is typing..." */
+/* I don't know how to move this back to the left, but I've made it more visible */
+.typing-2J1mQU {
+	align-items: start !important;
+	align-content: start !important;
+	text-align: left !important;
+	margin-top: -8pt !important;
+}
+.typing-2J1mQU .typingDots-1Y8dki span.text-3S7XCz {
+	align-items: start !important;
+	align-content: start !important;
+	text-align: left !important;
+	font-size: 10pt !important;
+	
+	/* Background in case its obstructed */
+	background-color: rgba(0, 0, 0, 0.3) !important;
+	padding: 3pt 7pt 3pt 7pt !important;
+	backdrop-filter: blur(2px);
+	filter: contrast(120%);
+}
+
+
+/* Channel name selected highlight */
 .name-28HaxV {
 	color: rgba(255, 255, 255, 0.5) !important;
 }
 .selected-2TbFuo div a div .name-28HaxV {
 	color: rgba(255, 255, 255, 1.0) !important;
 }
+
+/* Channel && DM background selected highlight */
+li.channel-1Shao0[role$="listitem"] {
+	background-color: rgba(255, 255, 255, 0) !important;
+}
+li.channel-1Shao0[role$="listitem"] div.selected-26oxtA {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Channel unread highlight */
+.modeUnread-3Cxepe:has(.unread-36eUEm) div .link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.15
+	) !important;
+}
+.modeUnread-3Cxepe:has(.unread-36eUEm) div .link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] .name-28HaxV {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 30%)
+	) !important;
+}
+
 
 /* Categories */
 /* Wish i could do better but i suck at CSS math */
@@ -60,19 +107,44 @@
 	opacity: 100%;
 }
 
+
 /* Server list */
 ul[data-list-id^="guildsnav"] {
 	backdrop-filter: blur(3px);
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Server icons */
-.wrapper-3kah-n[data-list-item-id^="guildsnav"] {
+/* Server icons && DM unread icons */
+.wrapper-3kah-n {
 	filter: saturate(105%);
 }
 .selected-1Drb7Z[data-list-item-id^="guildsnav"] {
 	filter: saturate(130%);
 }
+.icon-3AqZ2e {
+	box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+
+/* DM guildsnav unread icon badges */
+.theme-dark .guilds-2JjMmN .listItem-3SmSlK .numberBadge-37OJ3S {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	box-shadow: 0 0 4px 1.5px rgba(0, 0, 0, 0.8);
+}
+.lowerBadge-3j0ZAg .numberBadge-37OJ3S {
+	color: var(--fluent-text-on-accent-color) !important;
+}
+
+
+/* Server "UNREAD" pill */
+/* This fixes a Fluent bug where the unread pill wont show if your icon size is bigger than 40ish pixels */
+.listItem-3SmSlK .pill-2RsI5Q {
+	z-index: 2;
+}
+
 
 /* "Read all button" plugin support
    (I've spent hours on this. THIS WAS A NIGHTMARE)
@@ -107,6 +179,8 @@ div .scroller-3X7KbA[dir$="ltr"] button:hover {
 		0.6
 	) !important;
 }
+
+
 /* Text replace */
 div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX {
     visibility: hidden;
@@ -120,6 +194,7 @@ div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX::after {
     content: "Read All";
 }
 
+
 /* DMs header thing */
 .privateChannelsHeaderContainer-1UWASm {
 	background-color: rgba(0, 0, 0, 0.1);
@@ -130,11 +205,28 @@ div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX::after {
 	margin-bottom: 2px;
 }
 
-/* DM channels */
+/* DM channel separation */
 li.channel-1Shao0[role$="listitem"] {
 	border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
 	padding: 0px;
 }
+
+/* DM channel text highlight */
+a.link-39sEB3 div .content-66wMin div div div {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* DM channel text unread highlight */
+a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
+	color: white;
+	font-weight: 500;
+}
+
+/* DM channel unread highlight */
+.interactive-26HRN_.interactive-iyXY_x .link-39sEB3[aria-label^="unread"] {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 
 /* Blur under selected */
 .containerDefault-YUSmu3:hover, /* Hovered channel */
@@ -142,6 +234,7 @@ li.channel-1Shao0[role$="listitem"] {
 {
 	backdrop-filter: blur(4px);
 }
+
 
 /* Channel line remover */
 /* Tweak from the vending machine themself */
