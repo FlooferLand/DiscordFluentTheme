@@ -242,6 +242,19 @@ li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv):hover {
 }
 
 
+/* Bringing back audio file titles (idk why Fluent removes them its stupid) */
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 a[aria-label$="Download"] {
+	display: inline !important;
+}
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 div.metadataSize-2A2s1T {
+	display: inline !important;
+	margin-left: 10pt !important;
+}
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 {
+	margin-bottom: 5pt !important;
+}
+
+
 /* Blur under selected */
 .containerDefault-YUSmu3:hover, /* Hovered channel */
 .selected-2TbFuo                /* Selected channels */
