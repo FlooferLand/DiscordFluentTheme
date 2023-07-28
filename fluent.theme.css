@@ -263,6 +263,18 @@ div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 {
 }
 
 
+/* Image / video backdrop */
+div.backdrop-2ByYRN.withLayer-2VVmpp {
+	backdrop-filter: blur(2px) brightness(50%);
+}
+
+
+/* Text box backdrop blur */
+.channelTextArea-1FufC0, .channelTextArea-1VQBuV {
+	backdrop-filter: blur(5px) brightness(65%);
+}
+
+
 /* Channel line remover */
 /* Tweak from the vending machine themself */
 @font-face {
