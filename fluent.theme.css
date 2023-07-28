@@ -270,8 +270,53 @@ div.backdrop-2ByYRN.withLayer-2VVmpp {
 
 
 /* Text box backdrop blur */
+/* TODO: Fix backdrop-filter pop-in */
 .channelTextArea-1FufC0, .channelTextArea-1VQBuV {
-	backdrop-filter: blur(5px) brightness(65%);
+	backdrop-filter: blur(5px) brightness(65%) !important;
+}
+
+
+/* Settings background blur + dark mode  */
+/* This won't work due to backdrop-filter always popping in for some reason (most likely animations) */
+/*
+	@keyframes SettingsFadeIn {
+		from {
+			backdrop-filter: blur(0px) contrast(100%) brightness(100%) saturate(100%) !important;
+		}
+		
+		to {
+			backdrop-filter: blur(6px) contrast(125%) brightness(140%) saturate(60%) !important;
+		}
+	}
+	.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
+		animation-play-state: paused !important;
+		animation: none !important;
+		backdrop-filter: blur(6px) contrast(125%) brightness(140%) saturate(60%) !important;
+	}
+	.animating-1rIrGV {
+		animation-play-state: running;
+		animation:
+			fluent-layer-transition 250ms cubic-bezier(0, 0, 0, 1)
+			SettingsFadeIn 200ms linear forwards !important;
+	}
+	.sidebarRegion-1VBisG {
+		animation:
+			fluent-layer-transition 250ms cubic-bezier(0, 0, 0, 1)
+			SettingsFadeIn 200ms linear !important;
+	}
+*/
+
+
+/* Watermark */
+div.side-1lrxIh::after {
+	content: "FlooferLand's Gay FluentDiscord";
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 32px;
+	
+	text-align: center;
+	align-content: center;
 }
 
 
