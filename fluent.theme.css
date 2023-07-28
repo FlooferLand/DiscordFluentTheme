@@ -18,7 +18,7 @@
 	--fluent-acrylic-background-blur: 2px;
 	--fluent-acrylic-background-dimness: 60%;
 	--fluent-acrylic-background-saturate: 50%;
-	--fluent-guilds-icon-size: 40px;
+	--fluent-guilds-icon-size: 38px;
 }
 
 /*
@@ -145,9 +145,26 @@ ul[data-list-id^="guildsnav"] {
 
 
 /* Server "UNREAD" pill */
-/* This fixes a Fluent bug where the unread pill wont show if your icon size is bigger than 40ish pixels */
 .listItem-3SmSlK .pill-2RsI5Q {
-	z-index: 2;
+	/* This fixes a Fluent bug where the unread pill wont show if your icon size is bigger than 40ish pixels */
+	z-index: 3 !important;
+}
+.listItem-3SmSlK .pill-2RsI5Q span.item-2LIpTv {
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+
+/* DM / Server notif separator */
+.guildSeparator-a4uisj {
+	height: 2px !important;
+	margin-top: 0;
+	margin-bottom: 2pt;
+	width: 24px !important;
+	background-color: rgba(255, 255, 255, 0.21) !important;
+	display: block !important;
+	visibility: visible !important;
 }
 
 
@@ -200,14 +217,31 @@ div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX::after {
 }
 
 
+/* Search bar */
+.searchBarComponent-3N7dCG {
+	background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+
 /* DMs header thing */
 .privateChannelsHeaderContainer-1UWASm {
-	background-color: rgba(0, 0, 0, 0.1);
 	margin-left: 5pt;
 	padding-top: 4pt !important;
 	padding-bottom: 5pt !important;
+	background-color: rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(4px);
 	margin-bottom: 2px;
+}
+span.headerText-1qIDDT {
+	color: var(--channels-default) !important;
+}
+
+/* DMs header separator */
+ul.content-yjf30S div[aria-hidden="true"] {
+	background-color: rgba(0, 0, 0, 0.1);
+	height: 1pt !important;
+	margin-left: 10pt;
+	margin-right: 10pt;
 }
 
 /* DM channel separation */
