@@ -73,26 +73,51 @@
 	color: rgba(255, 255, 255, 1.0) !important;
 }
 
-/* Channel && DM background selected highlight */
-li.channel-1Shao0[role$="listitem"] {
-	background-color: rgba(255, 255, 255, 0) !important;
-}
-li.channel-1Shao0[role$="listitem"] div.selected-26oxtA {
-	background-color: rgba(255, 255, 255, 0.1) !important;
+/* Channel background selected highlight */
+li.selected-2TbFuo div.modeSelected-3DmyhH {
+	background-color: rgba(255, 255, 255, 0.03) !important;
 }
 
 /* Channel unread highlight */
-.modeUnread-3Cxepe:has(.unread-36eUEm) div .link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] {
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] {
 	background-color: hsla(
 		var(--fluent-accent-hue-sat),
 		calc(var(--fluent-accent-lightness) + 25%),
 		0.15
 	) !important;
 }
-.modeUnread-3Cxepe:has(.unread-36eUEm) div .link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] .name-28HaxV {
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] .name-28HaxV {
 	color: hsl(
 		var(--fluent-accent-hue-sat),
 		calc(var(--fluent-accent-lightness) + 30%)
+	) !important;
+}
+
+/* Channel unread PING highlight */
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"]:has(.linkTop-1W1aK6) {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.15
+	) !important;
+}
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"]:has(.linkTop-1W1aK6) .name-28HaxV {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 30%)
+	) !important;
+}
+
+/* Channel selected pill */
+.theme-dark.platform-win .sidebar-1tnWFu .containerDefault-YUSmu3 .wrapper-NhbLHG::before {
+    background-color: white;
+}
+
+/* Channel notif pill */
+.theme-dark.platform-win .sidebar-1tnWFu .containerDefault-YUSmu3 .unread-36eUEm {
+    background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
 	) !important;
 }
 
@@ -237,7 +262,7 @@ span.headerText-1qIDDT {
 }
 
 /* DMs header separator */
-ul.content-yjf30S div[aria-hidden="true"] {
+div.scroller-WSmht3[data-list-id$="private-channels-uid_23"] ul.content-yjf30S div[aria-hidden="true"] {
 	background-color: rgba(0, 0, 0, 0.1);
 	height: 1pt !important;
 	margin-left: 10pt;
@@ -263,6 +288,19 @@ a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
 
 /* DM channel unread highlight */
 .interactive-26HRN_.interactive-iyXY_x .link-39sEB3[aria-label^="unread"] {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 22%),
+		0.18
+	) !important;
+	color: red !important;
+}
+
+/* DM background selected highlight */
+.channel-1Shao0[role$="listitem"] {
+	background-color: rgba(255, 255, 255, 0) !important;
+}
+.channel-1Shao0[role$="listitem"] div.selected-26oxtA {
 	background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
