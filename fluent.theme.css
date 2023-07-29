@@ -209,25 +209,8 @@ div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
 	margin: 1.4pt !important;
 }
 
-/* Server UNREAD highlight */
-div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
-> div div.blobContainer-ikKyFs {
-	border-radius: 50%;
-	margin: -1.5px;
-	border: 1.5px solid hsla(
-		var(--fluent-accent-hue-sat),
-		calc(var(--fluent-accent-lightness) + 25%),
-		0.4
-	) !important;
-	background-color: hsla(
-		var(--fluent-accent-hue-sat),
-		calc(var(--fluent-accent-lightness) + 25%),
-		0.2
-	) !important;
-}
-
 /* Server PING pill */
-div.listItem-3SmSlK:has(div div.blobContainer-ikKyFs div.wrapper-2PSQCG div.lowerBadge-3j0ZAg)
+div.listItem-3SmSlK:not(:hover):has(div div.blobContainer-ikKyFs:not(.selected-3c78Ai) div.wrapper-2PSQCG div.lowerBadge-3j0ZAg)
 > div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
 	background-color: hsl(
 		var(--fluent-accent-hue-sat),
@@ -238,9 +221,9 @@ div.listItem-3SmSlK:has(div div.blobContainer-ikKyFs div.wrapper-2PSQCG div.lowe
 	margin: 1.4pt !important;
 }
 
-/* Server PING highlight */
-div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
-> div div.blobContainer-ikKyFs {
+/* Server UNREAD / PING highlight */
+div.listItem-3SmSlK:not(:hover):has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div div.blobContainer-ikKyFs:not(.selected-3c78Ai) {
 	border-radius: 50%;
 	margin: -1.5px;
 	border: 1.5px solid hsla(
