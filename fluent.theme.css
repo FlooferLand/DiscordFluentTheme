@@ -24,6 +24,8 @@
 /*
 	TODO: Should search more trough Discord's CSS and use more Discord variables for colours
 	Example: var(--background-mentioned-hover), var(--font-primary)
+
+	TODO: Switch around the `unread` and `selected` colours for pills and stuff
 */
 
 /* Setting element */
@@ -75,8 +77,10 @@
 
 /* Channel background selected highlight */
 li.selected-2TbFuo div.modeSelected-3DmyhH {
-	background-color: rgba(255, 255, 255, 0.03) !important;
+	background-color: rgba(255, 255, 255, 0.04) !important;
 }
+
+/* TODO: Redo the channel highlight things. The conditions/tags aren't 100% right. */
 
 /* Channel unread highlight */
 .modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] {
@@ -84,6 +88,10 @@ li.selected-2TbFuo div.modeSelected-3DmyhH {
 		var(--fluent-accent-hue-sat),
 		calc(var(--fluent-accent-lightness) + 25%),
 		0.15
+	) !important;
+	border: 1px dashed hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%)
 	) !important;
 }
 .modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] .name-28HaxV {
@@ -99,6 +107,10 @@ li.selected-2TbFuo div.modeSelected-3DmyhH {
 		var(--fluent-accent-hue-sat),
 		calc(var(--fluent-accent-lightness) + 25%),
 		0.15
+	) !important;
+	border: 1.5px dashed hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
 	) !important;
 }
 .modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"]:has(.linkTop-1W1aK6) .name-28HaxV {
@@ -119,6 +131,11 @@ li.selected-2TbFuo div.modeSelected-3DmyhH {
 		var(--fluent-accent-hue-sat),
 		calc(var(--fluent-accent-lightness) + 20%)
 	) !important;
+	border: 0.5px solid hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 3;
 }
 
 
@@ -169,12 +186,78 @@ ul[data-list-id^="guildsnav"] {
 }
 
 
-/* Server "UNREAD" pill */
-.listItem-3SmSlK .pill-2RsI5Q {
+/* DM && Server pill visibility fix */
+.pill-2RsI5Q, .pill-22lZHo {
 	/* This fixes a Fluent bug where the unread pill wont show if your icon size is bigger than 40ish pixels */
-	z-index: 3 !important;
+	z-index: 4 !important;
 }
-.listItem-3SmSlK .pill-2RsI5Q span.item-2LIpTv {
+.pill-22lZHo {
+	/* Moving the DM pill so its consistent with the server one*/
+	position: absolute !important;
+	left: -1.25pt;
+}
+
+/* Server UNREAD pill */
+div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+/* Server UNREAD highlight */
+div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div div.blobContainer-ikKyFs {
+	border-radius: 50%;
+	margin: -1.5px;
+	border: 1.5px solid hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.4
+	) !important;
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.2
+	) !important;
+}
+
+/* Server PING pill */
+div.listItem-3SmSlK:has(div div.blobContainer-ikKyFs div.wrapper-2PSQCG div.lowerBadge-3j0ZAg)
+> div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+/* Server PING highlight */
+div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div div.blobContainer-ikKyFs {
+	border-radius: 50%;
+	margin: -1.5px;
+	border: 1.5px solid hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.4
+	) !important;
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.2
+	) !important;
+}
+
+/* Server select pill */
+div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: white !important;
 	z-index: 4 !important;
 	box-shadow: 0 0 2pt black;
 	margin: 1.4pt !important;
@@ -293,7 +376,6 @@ a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
 		calc(var(--fluent-accent-lightness) + 22%),
 		0.18
 	) !important;
-	color: red !important;
 }
 
 /* DM background selected highlight */
@@ -305,12 +387,44 @@ a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
 }
 
 
-/* Ping message (replies & stuff) */
+/* Ping message colour (replies & stuff) */
 li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv) {
-	background-color: var(--background-mentioned);
+	/* background-color: var(--background-mentioned); */
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%),
+		0.15
+	) !important;
 }
-li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv):hover {
-	background-color: var(--background-mentioned-hover);
+.mentioned-Tre-dv::before {
+	/* background-color: var(--background-mentioned); */
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
+	backdrop-filter: blur(5px) brightness(150%) contrast(150%) !important;
+}
+.mentioned-Tre-dv:hover {
+	/* background-color: var(--background-mentioned-hover); */
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%),
+		0.15
+	) !important;
+}
+
+/* FIXME: Can't set gutter colour! */
+div.message-2CShn3 div.repliedMessage-3Z6XBG::before {
+	--gutter: 2px !important;
+	--spine-width: 2px !important;
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
+	--gutter-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
 }
 
 
@@ -341,10 +455,15 @@ div.backdrop-2ByYRN.withLayer-2VVmpp {
 }
 
 
-/* Text box backdrop blur */
+/* Textbox backdrop blur */
 /* TODO: Fix backdrop-filter pop-in */
 .channelTextArea-1FufC0, .channelTextArea-1VQBuV {
 	backdrop-filter: blur(5px) brightness(65%) !important;
+}
+
+.inner-NQg18Y:active {
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px) brightness(180%) !important;
 }
 
 
@@ -380,7 +499,7 @@ div.backdrop-2ByYRN.withLayer-2VVmpp {
 
 
 /* Watermark */
-div.side-1lrxIh::after {
+nav.sidebar-nqHbhN div.side-1lrxIh[aria-label$="User Settings"]::after {
 	content: "FlooferLand's Gay FluentDiscord";
 	color: rgba(255, 255, 255, 0.5);
 	font-size: 14px;
@@ -389,6 +508,12 @@ div.side-1lrxIh::after {
 	
 	text-align: center;
 	align-content: center;
+}
+
+
+/* Search background */
+header.searchHeader-1r_ZSh + .scroller-3iiyhZ.thin-RnSY0a.scrollerBase-1Pkza4 {
+	backdrop-filter: blur(8px) brightness(130%) contrast(150%);
 }
 
 
