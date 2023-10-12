@@ -28,6 +28,11 @@
 	TODO: Switch around the `unread` and `selected` colours for pills and stuff
 */
 
+/* Removed shop tab */
+li.container-32HW5s.channel-1Shao0 [href$="shop"] {
+	display: none;
+}
+
 /* Setting element */
 .themed-qqoYp3[role$="tab"] {
 	background-color: rgba(255, 255, 255, 0.03);
