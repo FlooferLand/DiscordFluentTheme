@@ -6,6 +6,7 @@ jobs:
         name: upgrade
         runs-on: ubuntu-latest
         steps:
+            # Downloading the release
             - uses: robinraju/release-downloader@v1.8
               with:
                 # The source repository path. Expected format {owner}/{repo}
@@ -15,7 +16,49 @@ jobs:
                 latest: true
                 
                 # Name of the file to download (use '*' to download all assets other than tarball or zipball)
-                fileName: Fluent-Discord.theme.css
+                fileName: core.theme.css
                 
                 # Relative path under $GITHUB_WORKSPACE to place the downloaded files
                 out-file-path: .
+            
+            # Commiting the release to the current repository so it can be used in CSS
+            - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+              with:
+                # The arguments for the `git add` command
+                add: '.'
+            
+                # The name of the user that will be displayed as the author of the commit.
+                author_name: Github Actions
+            
+                # Additional arguments for the git commit command. The --message argument is already set by the message input.
+                commit: ''
+            
+                # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
+                cwd: '.'
+            
+                # Determines the way the action fills missing author name and email. Three options are available:
+                # - github_actor -> UserName <UserName@users.noreply.github.com>
+                # - user_info -> Your Display Name <your-actual@email.com>
+                # - github_actions -> github-actions <email associated with the github logo>
+                # Default: github_actor
+                default_author: github_actions
+            
+                # Arguments for the git fetch command. If set to false, the action won't fetch the repo.
+                # For more info as to why fetching is usually recommended, please see the "Performance on large repos" FAQ. 
+                # Default: --tags --force
+                fetch: true
+            
+                # The message for the commit.
+                # Default: 'Commit from GitHub Actions (name of the workflow)'
+                message: "Updated due to a new TakosThings/Fluent-Discord release"
+            
+                # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
+                # - ignore -> errors will be logged but the step won't fail
+                # - exitImmediately -> the action will stop right away, and the step will fail
+                # - exitAtEnd -> the action will go on, every pathspec error will be logged at the end, the step will fail.
+                # Default: ignore
+                pathspec_error_handling: ignore
+            
+                # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+                # Default: true
+                push: true
