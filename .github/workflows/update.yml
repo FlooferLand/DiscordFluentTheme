@@ -17,7 +17,8 @@ jobs:
           name: fluent-release-info
           workflow_conclusion: success
           workflow: publish.yml
-          if_no_artifact_found: warn
+          repo: TakosThings/Fluent-Discord
+          if_no_artifact_found: ignore
 
       - name: Get latest release
         id: get_release
