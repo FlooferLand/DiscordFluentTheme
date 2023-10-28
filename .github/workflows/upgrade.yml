@@ -31,16 +31,13 @@ jobs:
             - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
               with:
                 # The arguments for the `git add` command
-                add: './core/Fluent-Discord.theme.css'
+                add: 'core'
             
                 # The name of the user that will be displayed as the author of the commit.
                 author_name: Github Actions
             
                 # Additional arguments for the git commit command. The --message argument is already set by the message input.
                 commit: ''
-            
-                # The local path to the directory where your repository is located. You should use actions/checkout first to set it up.
-                cwd: $GITHUB_WORKSPACE
             
                 # Determines the way the action fills missing author name and email. Three options are available:
                 # - github_actor -> UserName <UserName@users.noreply.github.com>
