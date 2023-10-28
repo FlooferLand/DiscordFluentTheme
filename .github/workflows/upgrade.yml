@@ -25,7 +25,7 @@ jobs:
                 fileName: Fluent-Discord.theme.css
                 
                 # Relative path under $GITHUB_WORKSPACE to place the downloaded files
-                out-file-path: /core/
+                out-file-path: core/
             
             # Commiting the release to the current repository so it can be used in CSS
             - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
