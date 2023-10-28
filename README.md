@@ -1,10 +1,10 @@
 ![# My Cute Gay Ass Theme](./marketing/marketing.png)
 Some changes I've made to [TakosThings' FluentDiscord theme.](https://github.com/TakosThings/Fluent-Discord)
 
-# UNMAINTAINED
-***Currently broken due to a Discord update***
-This theme is too high maintenance to fix rn due to TakosThings github.io page seemingly no longer being updated, so fetching the theme via CSS to apply patches to it is impossible. <br/>
-Feel free to help in this regard by fixing the broken Github Workflow mess I've made
+<!> <br/>
+***Currently broken due to Discord's update, almost all themes are!*** <br/>
+***Waiting on TakosThings to update their theme*** <br/>
+<!> <br/>
 
 # Configuration (Vencord/BD)
 If you want to replace my hella gay Owl House wallpaper _(dont know why you'd do that)_ use the following:
