@@ -1,0 +1,21 @@
+on:
+    workflow_dispatch:
+
+jobs:
+    upgrade:
+        name: upgrade
+        runs-on: ubuntu-latest
+        steps:
+            - uses: robinraju/release-downloader@v1.8
+              with:
+                # The source repository path. Expected format {owner}/{repo}
+                repository: TakosThings/Fluent-Discord
+                
+                # A flag to choose between latest release and remaining releases
+                latest: true
+                
+                # Name of the file to download (use '*' to download all assets other than tarball or zipball)
+                fileName: Fluent-Discord.theme.css
+                
+                # Relative path under $GITHUB_WORKSPACE to place the downloaded files
+                out-file-path: .
