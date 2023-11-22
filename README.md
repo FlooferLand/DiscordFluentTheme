@@ -2,8 +2,8 @@
 Some changes I've made to [TakosThings' FluentDiscord theme.](https://github.com/TakosThings/Fluent-Discord)
 
 <!> <br/>
-***Currently broken due to Discord's update, almost all themes are!*** <br/>
-***Waiting on TakosThings to update their theme*** <br/>
+***THIS THEME IS DISCONTINUED*** <br/>
+***TakosThings' theme has completely stopped working for me for about a month now. I can't continue maintaining this theme.*** <br/>
 <!> <br/>
 
 # Installation/Configuration (Vencord/BD)

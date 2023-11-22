@@ -6,7 +6,7 @@
 
 /* TEMPORARY UPDATE INFO */
 ul[role="list"][aria-label="Direct Messages"][class="content__23cab"]::before {
-	content: '"Themes are all currently broken due to an update. I and a lot of people are trying to fix them" - Floof' !important;
+	content: '"This theme is discontinued due to TakosThings base theme no longer working" - Floof' !important;
 	color: rgb(100, 150, 255);
 	text-shadow: 3px 3px 6px black;
 	font-size: 65%;;

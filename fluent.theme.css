@@ -5,6 +5,8 @@
  * @source https://github.com/FlooferLand/DiscordFluentTheme
 */
 
+@import url(https://raw.githubusercontent.com/FlooferLand/DiscordFluentTheme/main/fluent.base.theme.css);
+
 :root {
 	/* OrchidLight */
 	--fluent-accent-hue-sat: 307, 55%;
