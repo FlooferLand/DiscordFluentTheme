@@ -2,7 +2,7 @@
 /* Original fluent theme: https://github.com/TakosThings/Fluent-Discord */
 
 /* Importing the very cool fluent base */
-@import url(https://takosthings.github.io/Fluent-Discord/Fluent-Discord.css);
+@import url(https://raw.githubusercontent.com/FlooferLand/DiscordFluentTheme/main/core/Fluent-Discord-static.theme.css);
 
 /* TEMPORARY UPDATE INFO */
 ul[role="list"][aria-label="Direct Messages"][class="content__23cab"]::before {
