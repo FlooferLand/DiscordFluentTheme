@@ -21,7 +21,7 @@ jobs:
                 latest: true
                 
                 # Name of the file to download (use '*' to download all assets other than tarball or zipball)
-                fileName: Fluent-Discord.theme.css
+                fileName: Fluent-Discord-static.theme.css
                 
                 # Relative path under $GITHUB_WORKSPACE to place the downloaded files
                 out-file-path: core/
