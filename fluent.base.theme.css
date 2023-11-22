@@ -1,0 +1,534 @@
+/* These are a bunch of changes I've made to an existing theme, to make it better, in my opinion. */
+/* Original fluent theme: https://github.com/TakosThings/Fluent-Discord */
+
+/* Importing the very cool fluent base */
+@import url(https://raw.githubusercontent.com/FlooferLand/DiscordFluentTheme/main/core/Fluent-Discord-static.theme.css);
+
+/* TEMPORARY UPDATE INFO */
+ul[role="list"][aria-label="Direct Messages"][class="content__23cab"]::before {
+	content: '"Themes are all currently broken due to an update. I and a lot of people are trying to fix them" - Floof' !important;
+	color: rgb(100, 150, 255);
+	text-shadow: 3px 3px 6px black;
+	font-size: 65%;;
+}
+
+/* Default settings */
+:root {
+	/* OrchidLight */
+	--fluent-accent-hue-sat: 307, 55%;
+	--fluent-accent-lightness: 49%;
+
+	/* The colour text appears against the accent colour */
+	--fluent-text-on-accent-color: 0, 0, 0;
+
+	/* Ignore the gay */
+	--fluent-acrylic-background: url(https://images2.alphacoders.com/129/1291151.png);
+	--fluent-acrylic-background-blur: 2px;
+	--fluent-acrylic-background-dimness: 60%;
+	--fluent-acrylic-background-saturate: 50%;
+	--fluent-guilds-icon-size: 38px;
+}
+
+/*
+	TODO: Should search more trough Discord's CSS and use more Discord variables for colours
+	Example: var(--background-mentioned-hover), var(--font-primary)
+
+	TODO: Switch around the `unread` and `selected` colours for pills and stuff
+*/
+
+/* Removed nitro tab */
+li.channel_c21703.container__8759a div a[data-list-item-id$=private-channels-uid_23___nitro] {
+	display: none !important;
+}
+
+/* Removed shop tab */
+li.channel_c21703.container__8759a div a[data-list-item-id$=private-channels-uid_23___shop] {
+	display: none !important;
+}
+
+/* Setting element */
+.themed-qqoYp3[role$="tab"] {
+	background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Settings title */
+.header-2F5_LB[role$="button"] {
+	margin-top: 10pt;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+/* Textbox placeholder text */
+.placeholder-1rCBhr {
+	color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Textbox "{user} is typing..." */
+/* I don't know how to move this back to the left, but I've made it more visible */
+.typing-2J1mQU {
+	align-items: start !important;
+	align-content: start !important;
+	text-align: left !important;
+	margin-top: -8pt !important;
+}
+.typing-2J1mQU .typingDots-1Y8dki span.text-3S7XCz {
+	align-items: start !important;
+	align-content: start !important;
+	text-align: left !important;
+	font-size: 10pt !important;
+	
+	/* Background in case its obstructed */
+	background-color: rgba(0, 0, 0, 0.3) !important;
+	padding: 3pt 7pt 3pt 7pt !important;
+	backdrop-filter: blur(2px);
+	filter: contrast(120%);
+}
+
+
+/* Channel name selected highlight */
+.name-28HaxV {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+.selected-2TbFuo div a div .name-28HaxV {
+	color: rgba(255, 255, 255, 1.0) !important;
+}
+
+/* Channel background selected highlight */
+li.selected-2TbFuo div.modeSelected-3DmyhH {
+	background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* TODO: Redo the channel highlight things. The conditions/tags aren't 100% right. */
+
+/* Channel unread highlight */
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.15
+	) !important;
+	border: 1px dashed hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%)
+	) !important;
+}
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"][aria-label^="unread"] .name-28HaxV {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 30%)
+	) !important;
+}
+
+/* Channel unread PING highlight */
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"]:has(.linkTop-1W1aK6) {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.15
+	) !important;
+	border: 1.5px dashed hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+}
+.modeUnread-3Cxepe:has(.unread-36eUEm) div a.link-1_kTxV[data-list-item-id^="channels__"]:has(.linkTop-1W1aK6) .name-28HaxV {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 30%)
+	) !important;
+}
+
+/* Channel selected pill */
+.theme-dark.platform-win .sidebar-1tnWFu .containerDefault-YUSmu3 .wrapper-NhbLHG::before {
+    background-color: white;
+}
+
+/* Channel notif pill */
+.theme-dark.platform-win .sidebar-1tnWFu .containerDefault-YUSmu3 .unread-36eUEm {
+    background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	border: 0.5px solid hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 3;
+}
+
+
+/* Categories */
+/* Wish i could do better but i suck at CSS math */
+.name-3BUDLf {
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 35%)
+	) !important;
+}
+.containerDefault-3TQ5YN {
+	opacity: 80%;
+}
+.containerDefault-3TQ5YN:hover {
+	opacity: 100%;
+}
+
+
+/* Server list */
+ul[data-list-id^="guildsnav"] {
+	backdrop-filter: blur(3px);
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Server icons && DM unread icons */
+.wrapper-3kah-n {
+	filter: saturate(105%);
+}
+.selected-1Drb7Z[data-list-item-id^="guildsnav"] {
+	filter: saturate(130%);
+}
+.icon-3AqZ2e {
+	box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+
+/* DM guildsnav unread icon badges */
+.theme-dark .guilds-2JjMmN .listItem-3SmSlK .numberBadge-37OJ3S {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	box-shadow: 0 0 4px 1.5px rgba(0, 0, 0, 0.8);
+}
+.lowerBadge-3j0ZAg .numberBadge-37OJ3S {
+	color: var(--fluent-text-on-accent-color) !important;
+}
+
+
+/* DM && Server pill visibility fix */
+.pill-2RsI5Q, .pill-22lZHo {
+	/* This fixes a Fluent bug where the unread pill wont show if your icon size is bigger than 40ish pixels */
+	z-index: 4 !important;
+}
+.pill-22lZHo {
+	/* Moving the DM pill so its consistent with the server one*/
+	position: absolute !important;
+	left: -1.25pt;
+}
+
+/* Server UNREAD pill */
+div.listItem-3SmSlK:has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+/* Server PING pill */
+div.listItem-3SmSlK:not(:hover):has(div div.blobContainer-ikKyFs:not(.selected-3c78Ai) div.wrapper-2PSQCG div.lowerBadge-3j0ZAg)
+> div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%)
+	) !important;
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+/* Server UNREAD / PING highlight */
+div.listItem-3SmSlK:not(:hover):has(div.pill-2RsI5Q.wrapper-z5ab_q span)
+> div div.blobContainer-ikKyFs:not(.selected-3c78Ai) {
+	border-radius: 50%;
+	margin: -1.5px;
+	border: 1.5px solid hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.4
+	) !important;
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 25%),
+		0.2
+	) !important;
+}
+
+/* Server select pill */
+div.pill-2RsI5Q.wrapper-z5ab_q span.item-2LIpTv {
+	background-color: white !important;
+	z-index: 4 !important;
+	box-shadow: 0 0 2pt black;
+	margin: 1.4pt !important;
+}
+
+
+/* DM / Server notif separator */
+.guildSeparator-a4uisj {
+	height: 2px !important;
+	margin-top: 0;
+	margin-bottom: 2pt;
+	width: 24px !important;
+	background-color: rgba(255, 255, 255, 0.21) !important;
+	display: block !important;
+	visibility: visible !important;
+}
+
+
+/* "Read all button" plugin support
+   (I've spent hours on this. THIS WAS A NIGHTMARE)
+
+   sizeMin-3Yqxk5 and button-ejjZWC are so annoying */
+div .scroller-3X7KbA[dir$="ltr"] button {
+	all: unset !important;
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) - 20%),
+		0.6
+	) !important;
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 40%)
+	) !important;
+	opacity: 1%;
+	font-weight: 600 !important;
+	font-size: 7.5pt !important;
+	padding: 2pt !important;
+	width: 90% !important;
+	user-select: all !important;
+	text-decoration: none;
+	cursor: pointer !important;
+	margin-left: 2pt !important;
+	margin-right: 2pt !important;
+}
+div .scroller-3X7KbA[dir$="ltr"] button:hover {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 20%),
+		0.6
+	) !important;
+}
+
+
+/* Text replace */
+div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX {
+    visibility: hidden;
+    position: relative;
+}
+div .scroller-3X7KbA[dir$="ltr"] button .contents-3NembX::after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "Read All";
+}
+
+
+/* Search bar */
+.searchBarComponent-3N7dCG {
+	background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* DMs header thing */
+.privateChannelsHeaderContainer-1UWASm {
+	margin-left: 5pt;
+	padding-top: 4pt !important;
+	padding-bottom: 5pt !important;
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4px);
+	margin-bottom: 2px;
+}
+span.headerText-1qIDDT {
+	color: var(--channels-default) !important;
+}
+
+/* DMs header separator */
+div.scroller-WSmht3[data-list-id$="private-channels-uid_23"] ul.content-yjf30S div[aria-hidden="true"] {
+	background-color: rgba(0, 0, 0, 0.1);
+	height: 1pt !important;
+	margin-left: 10pt;
+	margin-right: 10pt;
+}
+
+/* DM channel separation */
+li.channel-1Shao0[role$="listitem"] {
+	border-bottom: 2px rgba(0, 0, 0, 0.1) solid;
+	padding: 0px;
+}
+
+/* DM channel text highlight */
+a.link-39sEB3 div .content-66wMin div div div {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* DM channel text unread highlight */
+a.link-39sEB3[aria-label^="unread"] div .content-66wMin div div div {
+	color: white;
+	font-weight: 500;
+}
+
+/* DM channel unread highlight */
+.interactive-26HRN_.interactive-iyXY_x .link-39sEB3[aria-label^="unread"] {
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 22%),
+		0.18
+	) !important;
+}
+
+/* DM background selected highlight */
+.channel-1Shao0[role$="listitem"] {
+	background-color: rgba(255, 255, 255, 0) !important;
+}
+.channel-1Shao0[role$="listitem"] div.selected-26oxtA {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+/* Ping message colour (replies & stuff) */
+li.messageListItem-ZZ7v6g:has(div.mentioned-Tre-dv) {
+	/* background-color: var(--background-mentioned); */
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%),
+		0.15
+	) !important;
+}
+.mentioned-Tre-dv::before {
+	/* background-color: var(--background-mentioned); */
+	background-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
+	backdrop-filter: blur(5px) brightness(150%) contrast(150%) !important;
+}
+.mentioned-Tre-dv:hover {
+	/* background-color: var(--background-mentioned-hover); */
+	background-color: hsla(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%),
+		0.15
+	) !important;
+}
+
+/* FIXME: Can't set gutter colour! */
+div.message-2CShn3 div.repliedMessage-3Z6XBG::before {
+	--gutter: 2px !important;
+	--spine-width: 2px !important;
+	color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
+	--gutter-color: hsl(
+		var(--fluent-accent-hue-sat),
+		calc(var(--fluent-accent-lightness) + 15%)
+	) !important;
+}
+
+
+/* Bringing back audio file titles (idk why Fluent removes them its stupid) */
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 a[aria-label$="Download"] {
+	display: inline !important;
+}
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 div.metadataSize-2A2s1T {
+	display: inline !important;
+	margin-left: 10pt !important;
+}
+div.audioMetadata-1Hrt8T div.metadataContent-lalfZ3 {
+	margin-bottom: 5pt !important;
+}
+
+
+/* Blur under selected */
+.containerDefault-YUSmu3:hover, /* Hovered channel */
+.selected-2TbFuo                /* Selected channels */
+{
+	backdrop-filter: blur(4px);
+}
+
+
+/* Image / video backdrop */
+div.backdrop-2ByYRN.withLayer-2VVmpp {
+	backdrop-filter: blur(2px) brightness(50%);
+}
+
+
+/* Textbox backdrop blur */
+/* TODO: Fix backdrop-filter pop-in */
+.channelTextArea-1FufC0, .channelTextArea-1VQBuV {
+	backdrop-filter: blur(5px) brightness(65%) !important;
+}
+
+.inner-NQg18Y:active {
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px) brightness(180%) !important;
+}
+
+
+/* Settings background blur + dark mode  */
+/* This won't work due to backdrop-filter always popping in for some reason (most likely animations) */
+/*
+	@keyframes SettingsFadeIn {
+		from {
+			backdrop-filter: blur(0px) contrast(100%) brightness(100%) saturate(100%) !important;
+		}
+		
+		to {
+			backdrop-filter: blur(6px) contrast(125%) brightness(140%) saturate(60%) !important;
+		}
+	}
+	.layer-86YKbF.baseLayer-W6S8cY.stop-animations {
+		animation-play-state: paused !important;
+		animation: none !important;
+		backdrop-filter: blur(6px) contrast(125%) brightness(140%) saturate(60%) !important;
+	}
+	.animating-1rIrGV {
+		animation-play-state: running;
+		animation:
+			fluent-layer-transition 250ms cubic-bezier(0, 0, 0, 1)
+			SettingsFadeIn 200ms linear forwards !important;
+	}
+	.sidebarRegion-1VBisG {
+		animation:
+			fluent-layer-transition 250ms cubic-bezier(0, 0, 0, 1)
+			SettingsFadeIn 200ms linear !important;
+	}
+*/
+
+
+/* Watermark */
+nav.sidebar-nqHbhN div.side-1lrxIh[aria-label$="User Settings"]::after {
+	content: "FlooferLand's Gay FluentDiscord";
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 32px;
+	
+	text-align: center;
+	align-content: center;
+}
+
+
+/* Search background */
+header.searchHeader-1r_ZSh + .scroller-3iiyhZ.thin-RnSY0a.scrollerBase-1Pkza4 {
+	backdrop-filter: blur(8px) brightness(130%) contrast(150%);
+}
+
+
+/* Channel line remover */
+/* Tweak from the vending machine themself */
+@font-face {
+    font-family: "Dashless";
+    src: url("https://vendicated.github.io/random-files/Dashless.woff2") format("woff2");
+}
+[data-list-item-id^=channels___], /* channel list */
+[class^=titleWrapper] > h1, /* top bar with topic */
+[class^=resultChannel], /* channel name in search */
+[class^=channelMention], /* channel mentions in chat */
+[class^=placeholder][class*=slateTextArea] /* "Send a message in #blah" */
+{
+    font-family: "Dashless", var(--font-primary);
+}

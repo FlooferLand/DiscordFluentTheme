@@ -6,29 +6,14 @@ Some changes I've made to [TakosThings' FluentDiscord theme.](https://github.com
 ***Waiting on TakosThings to update their theme*** <br/>
 <!> <br/>
 
-# Configuration (Vencord/BD)
-If you want to replace my hella gay Owl House wallpaper _(dont know why you'd do that)_ use the following:
-```css
-@import url(https://raw.githubusercontent.com/FlooferLand/DiscordFluentTheme/main/fluent.theme.css);
+# Installation/Configuration (Vencord/BD)
+You can download the theme [here](./fluent.theme.css) and place it in your themes folder _(on Vencord too!).
 
-:root {
-	/* OrchidLight */
-	--fluent-accent-hue-sat: 307, 55%;
-	--fluent-accent-lightness: 49%;
+In order to configure it, you can just open it up and tweak stuff.
 
-	/* The colour text appears against the accent colour */
-	--fluent-text-on-accent-color: 0, 0, 0;
+You can additionally paste the content of [fluent.theme.css](./fluent.theme.css) inside your QuickCSS, instead of your themes folder.
 
-	/* Ignore the gay */
-	--fluent-acrylic-background: url(https://images2.alphacoders.com/129/1291151.png);
-	--fluent-acrylic-background-blur: 2px;
-	--fluent-acrylic-background-dimness: 60%;
-	--fluent-acrylic-background-saturate: 50%;
-	--fluent-guilds-icon-size: 40px;
-}
-```
-### In Vencord, just paste that into your QuickCSS page. Could probably do the same for BD
-Also view all the settings [here](https://github.com/TakosThings/Fluent-Discord/wiki/Options) alright goodbye thank you ヾ(＠⌒ー⌒＠)ノ
+View all the settings [here](https://github.com/TakosThings/Fluent-Discord/wiki/Options) alright goodbye thank you ヾ(＠⌒ー⌒＠)ノ
 
 # Keep in mind
 - This is an edit of FluentDiscord, that theme belongs to [TakosThings.](https://github.com/TakosThings)
